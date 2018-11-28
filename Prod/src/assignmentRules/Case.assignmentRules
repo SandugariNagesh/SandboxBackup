@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Case Assignment Rules</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Revenue_Department</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Revenue Escalation</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Contact_Center</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Service Not Needed</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Closed</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Knowledgebase_Administrator</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 AND 2 AND 3)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Information Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New,Open</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Information Request</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Mobile_and_Web_Address_Review</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Street__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>notEqual</operation>
+                <value>LI Escalation</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Service Request Type</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>notEqual</operation>
+                <value>Email</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Supervisors</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Tree Dangerous</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Police_Complaint</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Police Complaint</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>License_Inspections</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Donation Bin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Bin_location__c</field>
+                <operation>equals</operation>
+                <value>Street,Sidewalk</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Commercial_or_Residential__c</field>
+                <operation>equals</operation>
+                <value>Commercial,Residential</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Residential_or_Commerical__c</field>
+                <operation>equals</operation>
+                <value>Residential,Commercial</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Streets_Department</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Donation Bin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Bin_location__c</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Commercial_or_Residential__c</field>
+                <operation>equals</operation>
+                <value>Commercial,Residential</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Residential_or_Commerical__c</field>
+                <operation>equals</operation>
+                <value>Residential,Commercial</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Supervisors</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND (3 OR  4 OR 5 OR 6 OR 7 OR 8 OR 9)</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Inlet Cleaning</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Inlet Cleaning</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Heavy_Rain__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Flooding__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Obstructing_Traffic__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Bad_Odor__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Cover_Missing_or_Broken__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Water_in_Basement_or_Cellar__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Illegal_Dumping__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Clip_Vacant_Lots</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Vacant Lot Clean-Up</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Vacant Lot Clean-Up</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Supervisors</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Street Trees</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Open</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Tree_on_State_Owned_Highway__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>LI_Help</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>LI Escalation</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Permit,Tax Issue,Eclipse,Property Certification,Licenses</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Complaint_for_Regional_EMS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 AND 2 AND 3 AND 4) OR (5 AND 6 AND 7)</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Complaints Against Fire or EMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Complaint Against Fire or EMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Ambulance_Color__c</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Ambulance_Emblem__c</field>
+                <operation>equals</operation>
+                <value>other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Complaints against Fire or EMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Complaint Against Fire or EMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.EMS_Medical_Call__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Complaint_for_Fire_Department</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Complaints Against Fire or EMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Complaint Against Fire or EMS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Ambulance_Color__c</field>
+                <operation>equals</operation>
+                <value>Red and White</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Ambulance_Emblem__c</field>
+                <operation>equals</operation>
+                <value>Philadelphia Fire Dept</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Smoke_Detector</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Smoke Detector</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Smoke Detector</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Police_Department</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Abandoned Vehicle</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Graffiti_Abatement</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Graffiti Removal</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Contact_Center</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 AND 2 AND 3) OR (4 AND 5 AND 6)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Street Defect</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>notEqual</operation>
+                <value>Service Not Needed</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_Request_Id__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Parks and Rec Safety and Maintenance</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Emergencies</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Problem_Category__c</field>
+                <operation>equals</operation>
+                <value>Emergency</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Directory_Assistance</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Directory Assistance - SR</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Directory Assistance</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Water_Department_PWD</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 AND 2) OR  (3 AND 4 AND (5 OR 6)) OR (7 AND 8)</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Hydrant Knocked Down (No Water)</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Hydrant Knocked Down</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Inlet Cleaning</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Inlet Cleaning</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>notEqual</operation>
+                <value>Closed</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Hazardous_Waste__c</field>
+                <operation>equals</operation>
+                <value>Yes</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Record_Type__c</field>
+                <operation>equals</operation>
+                <value>Hydrant Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Service_Request_Type__c</field>
+                <operation>equals</operation>
+                <value>Hydrant Knocked Down</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Salesforce_Administrator</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>RecordType.DeveloperName == &apos;Support_Case&apos;</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>License_Inspections</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Department__c</field>
+                <operation>equals</operation>
+                <value>License &amp; Inspections</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Streets_Department</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Department__c</field>
+                <operation>equals</operation>
+                <value>Streets Department</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Parks_and_Recreation</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Department__c</field>
+                <operation>equals</operation>
+                <value>Parks &amp; Recreation</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>X311_Contact_Center</assignedTo>
+            <assignedToType>Queue</assignedToType>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>
